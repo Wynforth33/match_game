@@ -47,7 +47,6 @@ MatchGame.renderCards = function(cardValues, $game) {
     'hsl(360, 85%, 65%)'];
   $game.empty();
   for (let i = 0; i < cardValues.length; i++){
-    const $card = $('<div class="card col-xs-3"></div>');
     const cardValue = cardValues[i];
     const cardColor = colors[cardValue-1];
     const cardData = {
@@ -55,6 +54,7 @@ MatchGame.renderCards = function(cardValues, $game) {
       color: cardColor,
       isFlipped: false
     };
+    const $card = $('<div class="card col-xs-3"></div>');
     $card.data(cardData);
     $game.append($card);
   };
